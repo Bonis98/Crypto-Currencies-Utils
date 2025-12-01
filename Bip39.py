@@ -27,7 +27,7 @@ class BIP39:
         #Split mnemonic into groups of 11 bits
         splitbinmnemonic = [binmnemonic[i:i + 11] for i in range(0, len(binmnemonic), 11)]
         #Load wordlist
-        words = self.__loadWordList('english_wordlist.txt')
+        words = self.__loadWordList('wordlist/english_wordlist.txt')
         seedphrase = []
         #for each group of bits, find the correspondent word
         for group in splitbinmnemonic:
@@ -48,7 +48,7 @@ class BIP39:
         return key
 
     def __isphrasevalid(self, seedphrase):
-        words = self.__loadWordList('english_wordlist.txt')
+        words = self.__loadWordList('wordlist/english_wordlist.txt')
         indexs = []
         binmnemonic = ''
         for group in seedphrase:
