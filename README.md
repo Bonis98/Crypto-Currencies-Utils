@@ -23,11 +23,12 @@ pip install ecdsa base58
 ## Usage
 
 ### BIP39 - Generate Seed Phrase
+
 ```python
 from Bip39 import BIP39
 
 wallet = BIP39(entropy_bits=256)
-seedPhrase = wallet.seedphrase()
+seedPhrase = wallet.seed_phrase_value()
 print('BIP39 Phrase:', ' '.join(seedPhrase))
 print('Seed:', wallet.seed().hex())
 ```
